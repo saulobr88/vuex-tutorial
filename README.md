@@ -5,7 +5,6 @@ This contains a simple Vuex App, for study purpose only.
 > Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
 > - [Vuex Intro](https://vuex.vuejs.org/en/intro.html)
 
-> A Vue.js project
 ## Build Setup
 
 ``` bash
