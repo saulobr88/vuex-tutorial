@@ -7,7 +7,7 @@
                 <span class="price">£{{ product.price }}</span>
             </li>
         </ul>
-        <button v-on:click="reducePrice">Reduce Price</button>
+        <button v-on:click="reducePrice(4)">Reduce Price (wait 2 seconds)</button>
     </div>
 </template>
 
@@ -22,11 +22,12 @@ export default {
       }
   },
   methods: {
-      reducePrice: function(){
+      reducePrice: function(payload){
           /* this.$store.state.products.forEach( product => {
               product.price -= 1
           }); */
-          this.$store.commit('reducePrice');
+          //this.$store.commit('reducePrice'); // call mutation
+          this.$store.dispatch('reducePrice', payload); // call Action
       }
   }
 }

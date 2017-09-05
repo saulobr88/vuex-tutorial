@@ -28,10 +28,17 @@ export const store = new Vuex.Store({
     * Using Vue.Js DevTools in Google Chrome to see the history of changes
     */
     mutations: {
-        reducePrice: state => {
+        reducePrice: (state, payload) => {
             state.products.forEach( product => {
-                product.price -= 1
+                product.price -= payload //payload: The amount to reduce
             });
+        }
+    },
+    actions: {
+        reducePrice: (context, payload) => {
+            setTimeout(function(){ // reach out for data
+                context.commit('reducePrice', payload);
+            }, 2000); // Wait for 2 seconds before exec mutation
         }
     }
 });
